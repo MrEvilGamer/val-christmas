@@ -1,6 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
+author 'Vallen
+
 client_scripts {
     '@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
@@ -13,3 +15,4 @@ client_scripts {
 server_script 'server.lua'
 
 shared_script 'config.lua'
+
