@@ -159,14 +159,13 @@ RegisterNetEvent("christmas:interact", function(data)
 
                         createdTrees[treeIndex] = nil
 
-                        TriggerServerEvent('val-christmas:reward')
+                        TriggerServerEvent('val-christmas:reward', treeIndex)
                     else
                         ClearPedTasks(PlayerPedId())
                     end
                 end)
         else
             if Config.Framework == 'esx' then
-                -- ESX does not have a built-in progressbar, use a simple Wait
                 Wait(10000)
                 ClearPedTasks(PlayerPedId())
                 if DoesEntityExist(treeData.prop) then
@@ -179,7 +178,7 @@ RegisterNetEvent("christmas:interact", function(data)
                     exports['ox_target']:removeZone("christmas_" .. treeIndex)
                 end
                 createdTrees[treeIndex] = nil
-                TriggerServerEvent('val-christmas:reward')
+                TriggerServerEvent('val-christmas:reward', treeIndex)
             elseif Framework and Framework.Functions and Framework.Functions.Progressbar then
                 Framework.Functions.Progressbar("search_tree", "Searching the tree...", 10000, false, true, {
                 disableMovement = true,
@@ -207,7 +206,7 @@ RegisterNetEvent("christmas:interact", function(data)
 
                 createdTrees[treeIndex] = nil
 
-                TriggerServerEvent('val-christmas:reward')
+                TriggerServerEvent('val-christmas:reward', treeIndex)
             end, function()
                 ClearPedTasks(PlayerPedId())
             end)
@@ -225,9 +224,8 @@ RegisterNetEvent("christmas:interact", function(data)
                     exports['ox_target']:removeZone("christmas_" .. treeIndex)
                 end
                 createdTrees[treeIndex] = nil
-                TriggerServerEvent('val-christmas:reward')
+                TriggerServerEvent('val-christmas:reward', treeIndex)
             end
         end
     end
 end)
-
