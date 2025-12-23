@@ -1,4 +1,6 @@
 Config = {
+    Webhook = '', -- Set your Discord webhook URL here
+    RewardCooldown = 60, -- Cooldown in seconds between reward claims per player
     Framework = 'qbcore', -- qbcore | qbox | esx
     Inventory = 'default', -- default | ox_inventory
     TreeSpawnInterval = 1800000, -- 1 second = 1000
