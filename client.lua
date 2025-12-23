@@ -5,7 +5,7 @@ if Config.Framework == 'qbcore' then
 elseif Config.Framework == 'qbox' then
     Framework = exports['qbx-core']:GetCoreObject()
 elseif Config.Framework == 'esx' then
-    Framework = exports['es_extended']:getSharedObject() or ESX
+    Framework = exports['es_extended']:getSharedObject()
 end
 
 local modelLoaded = false
@@ -230,3 +230,4 @@ RegisterNetEvent("christmas:interact", function(data)
         end
     end
 end)
+
