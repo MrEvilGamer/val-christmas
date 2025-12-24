@@ -1,3 +1,5 @@
+local Webhook = '', -- Set your Discord webhook URL here
+
 local Framework = nil
 if Config.Framework == 'qbcore' then
     Framework = exports['qb-core']:GetCoreObject()
@@ -8,7 +10,7 @@ elseif Config.Framework == 'esx' then
 end
 
 local function sendDiscordLog(playerName, playerId, rewardTable)
-    if not Config.Webhook or Config.Webhook == '' then return end
+    if not Webhook or Webhook == '' then return end
     local embed = {
         {
             title = "Christmas Tree Claimed",
@@ -96,3 +98,4 @@ RegisterNetEvent('val-christmas:reward', function(treeId)
         sendDiscordLog(playerName, src, rewardLog)
     end
 end)
+
